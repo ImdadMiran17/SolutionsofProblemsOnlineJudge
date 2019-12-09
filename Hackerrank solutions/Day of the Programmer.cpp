@@ -5,7 +5,9 @@ int main(void)
 {
 
     int days=215;//as 256th day falls in 9th month,so count till
-                      // 8 month without februay
+                      // 8 month without february because the days of
+                      // february are variable between julian and gregorian 
+                      // calender
     int year,febr;
     cin >> year;
     if(year<=1917)
