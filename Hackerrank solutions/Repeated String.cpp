@@ -13,7 +13,7 @@ int main(void)
     len=s.length();
     repeat=n/len;
     rem=n%len;
-    for(i=0;i<n;i++)
+    for(i=0;i<len;i++)
     {
         if(s[i]=='a')
             count++;
