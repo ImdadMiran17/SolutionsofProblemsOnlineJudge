@@ -4,25 +4,28 @@ using namespace std;
 int main(void)
 {
 
-    int t,count=0;
-
-    cin >> t;
-    long long n,a;
-    while(t--)
+    int n,longfact[1000],i,j;
+    cin >> n;
+    longfact[0]=1;
+    int sizef=1;
+    for(i=2;i<=n;i++)
     {
-        scanf("%lld",&n);
-        long long temp;
-        temp=n;
-       while(temp!=0)
-       {
-        a=temp%10;
-        if(a!=0 && n%a==0)
-            count++;
-        temp=temp/10;
-       }
-       printf("%d\n",count);
-       count=0;
-
+        int baki=0;
+        for(j=0;j<sizef;j++)
+        {
+            int product=longfact[j]*i+baki;
+            longfact[j]=product%10;
+            baki=product/10;
+        }
+        while(baki)
+        {
+            longfact[sizef]=baki%10;
+            baki/=10;
+            sizef++;
+        }
     }
+    for(i=sizef-1;i>=0;i--)
+        printf("%d",longfact[i]);
+    cout << endl;
     return 0;
 }
