@@ -1,28 +1,27 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-int n, k;
-int arr[107];
-int res;
-int problem = 1, pagenum;
 
 int main() {
-    scanf("%d %d", &n, &k);
-    for (int i = 1; i <= n; i++) {
-        scanf("%d", &arr[i]);
-    }
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= arr[i]; j++) {
-            if (j == problem) {
-                res++;
+    int n, k;
+    cin>>n>>k;
+    int numProblems, specialProblems = 0, pageNumber = 0;
+    for(int i = 0; i < n; i++) {
+        cin>>numProblems;
+        pageNumber++; // increase for new chapter
+        int problem = 1;
+        while(numProblems > 0) {
+            numProblems--;
+            if(problem == pageNumber) {
+                specialProblems++;
             }
-            pagenum++;
-            if (j == arr[i] || pagenum == k) {
-                pagenum = 0;
-                problem++;
+            if(problem%k == 0 && numProblems != 0) {
+                pageNumber++; // increase for full page
             }
-        }
+            problem++;
+         }
     }
-    printf("%d\n", res);
+    cout<<specialProblems;
     return 0;
+}
 }
