@@ -9,35 +9,35 @@ int main(void)
     {
         string s;
         cin>>s;
-        int i,n=s.size(),m=0,c=0,k=0;
-        for(i=0; i<n; i++)
+        int i,l=s.size(),cnt=0,zero1=0,zero2=0;
+        for(i=0; i<l; i++)
         {
             if(s[i]=='1')
             {
-                c=i;
+                zero1=i;
                 break;
             }
 
         }
-        for(i=n-1; i>=0; i--)
+        for(i=l-1; i>=0; i--)
         {
             if(s[i]=='1')
             {
-                k=i;
+                zero2=i;
                 break;
             }
 
         }
-        for(i=c; i<=k; i++)
+        for(i=zero1; i<=zero2; i++)
         {
             if(s[i]=='0')
-                m++;
+                cnt++;
         }
 
-        if(c==k)
+        if(zero1==zero2)
             cout<<0<<endl;
         else
-            cout<<m<<endl;
+            cout<<cnt<<endl;
     }
     return 0;
 }
