@@ -8,16 +8,16 @@ int main()
     while(t--)
     {
 
-        int n,m,k,i,c=0,arr[1001];
+        int n,m,k,i,sum=0,arr[1001];
         cin>>n>>m;
         for(i=0; i<n; i++)
         {
             cin>>arr[i];
-            c+=arr[i];
+            sum+=arr[i];
         }
-        if(c<=m)
+        if(sum<=m)
         {
-            cout<<c<<endl;
+            cout<<sum<<endl;
         }
         else
         {
