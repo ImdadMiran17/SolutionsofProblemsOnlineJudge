@@ -5,7 +5,7 @@ int main(void){
   int n,m;
   cin >> n >> m;
   int initial = 1;
-  int time = 0;
+  long long int time = 0;
   while(m--){
     int current;
     scanf("%d",&current);
